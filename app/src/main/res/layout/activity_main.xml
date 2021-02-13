@@ -9,11 +9,12 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_main1"
         android:name="com.bcit.streamerdex.TestFragment"
-        android:layout_width="227dp"
-        android:layout_height="218dp"
+        android:layout_width="150dp"
+        android:layout_height="143dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.178" />
 </androidx.constraintlayout.widget.ConstraintLayout>
