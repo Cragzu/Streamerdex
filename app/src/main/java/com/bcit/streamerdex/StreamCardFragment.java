@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 public class StreamCardFragment extends Fragment {
     public StreamCardFragment()
     {
-        super(R.layout.fragment_test);
+        super(R.layout.fragment_stream_card);
     }
 
     @Override
