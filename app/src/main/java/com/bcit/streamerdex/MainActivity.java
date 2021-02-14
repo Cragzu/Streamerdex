@@ -16,4 +16,5 @@ public class MainActivity extends AppCompatActivity {
         //Intent intent = new Intent(this, PreferencesPage.class);
         //startActivity(intent);
     }
+
 }
