@@ -3,6 +3,7 @@ package com.bcit.streamerdex;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,5 +27,8 @@ public class StreamCardFragment extends Fragment {
         Log.d("Lifecycle fragment", "onViewCreated");
     }
 
+    public void setStreamView(String videoLink) {
+
+    }
 
 }
