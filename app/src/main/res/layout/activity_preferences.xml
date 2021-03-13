@@ -5,7 +5,7 @@
     android:id="@+id/preferencesPage_constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PreferencesPage">
+    tools:context=".PreferencesActivity">
 
     <LinearLayout
         android:id="@+id/preferencesPage_linearLayout"

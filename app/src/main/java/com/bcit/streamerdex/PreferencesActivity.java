@@ -10,9 +10,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.SearchView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
-public class PreferencesPage extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class PreferencesActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+
+    DatabaseReference dbStreamerdex = FirebaseDatabase.getInstance().getReference("streamerdex");
 
     private SearchView searchView;
     private TagAdapter tagAdapter;
@@ -21,7 +26,7 @@ public class PreferencesPage extends AppCompatActivity implements SearchView.OnQ
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preferences_page);
+        setContentView(R.layout.activity_preferences);
 
         loadTagList();
         setUpRecycler();
