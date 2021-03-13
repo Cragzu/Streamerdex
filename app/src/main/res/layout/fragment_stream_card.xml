@@ -55,11 +55,10 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageView_StreamPreview"
+        <WebView
+            android:id="@+id/stream_view"
             android:layout_width="match_parent"
-            android:layout_height="164dp"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:layout_height="166dp" />
 
         <LinearLayout
             android:id="@+id/LinearLayout_ButtonsBar"
