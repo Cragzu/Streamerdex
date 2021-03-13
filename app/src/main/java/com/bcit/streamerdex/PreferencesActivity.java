@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SearchView;
 
 import com.google.firebase.database.DatabaseReference;
@@ -22,14 +25,24 @@ public class PreferencesActivity extends AppCompatActivity implements SearchView
     private SearchView searchView;
     private TagAdapter tagAdapter;
     private ArrayList<TagItem> tagList;
+    private Button button_LaunchMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferences);
 
+        button_LaunchMain = findViewById(R.id.button_LaunchMain);
+
         loadTagList();
         setUpRecycler();
+
+        button_LaunchMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToMain();
+            }
+        });
     }
 
     /**
@@ -81,5 +94,10 @@ public class PreferencesActivity extends AppCompatActivity implements SearchView
     public boolean onQueryTextChange(String newText) {
         tagAdapter.getFilter().filter(newText);
         return false;
+    }
+
+    private void goToMain() { // todo: should pass data from selected tags to get cards
+        Intent i = new Intent(this, StreamerdexMainActivity.class);
+        startActivity(i);
     }
 }

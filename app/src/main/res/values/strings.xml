@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Streamerdex</string>
     <string name="login">Login</string>
+    <string name="launch_main">Get Started!</string>
     <string name="hang_on">Hang on!</string>
     <string name="loading_preferences">We’re finding streamers who fall under your preferences</string>
 </resources>
