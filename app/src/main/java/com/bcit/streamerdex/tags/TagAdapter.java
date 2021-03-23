@@ -1,4 +1,4 @@
-package com.bcit.streamerdex;
+package com.bcit.streamerdex.tags;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,10 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bcit.streamerdex.R;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.Locale;
 
 public class TagAdapter extends RecyclerView.Adapter<TagAdapter.TagViewHolder> implements Filterable {
 

@@ -1,4 +1,4 @@
-package com.bcit.streamerdex;
+package com.bcit.streamerdex.stream_cards;
 
 import java.util.ArrayList;
 
