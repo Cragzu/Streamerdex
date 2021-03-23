@@ -33,6 +33,7 @@ public class StreamCardFragment extends Fragment {
         Log.d("Lifecycle fragment", "onViewCreated");
         streamView = view.findViewById(R.id.stream_view);
 
+        // BM - Code for getting stream
         String url = "https://iblake.netlify.app/streamerdex/codemiko";
 
         streamView.setInitialScale(1);

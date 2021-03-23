@@ -7,12 +7,19 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class StreamerdexMainActivity extends AppCompatActivity {
+
+    DatabaseReference databaseStreams;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_streamerdex_main);
+
+        databaseStreams = FirebaseDatabase.getInstance().getReference("streamerdex");
 
 //        BM - Code for getting stream
 //        String url = "https://iblake.netlify.app/streamerdex/codemiko";
