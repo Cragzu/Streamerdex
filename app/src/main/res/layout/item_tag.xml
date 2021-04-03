@@ -11,5 +11,5 @@
         android:layout_weight="1"
         android:checked="false"
         android:onClick="tagCheckBoxToggle"
-        android:paddingLeft="5 dp" />
+        android:paddingLeft="5dp" />
 </LinearLayout>
