@@ -11,10 +11,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
+
 public class StreamCardFragment extends Fragment {
 
-    private Stream stream;
+    private TextView streamerName;
+    private TextView streamName;
+    private TextView description;
     private WebView streamView;
+    private ArrayList<Stream> listOfStreams;
 
     public StreamCardFragment()
     {
@@ -25,16 +30,30 @@ public class StreamCardFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("Lifecycle fragment", "onCreate");
+
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Log.d("Lifecycle fragment", "onViewCreated");
+
+        Bundle bundle = this.getArguments();
+        System.out.println(bundle);
+        if (bundle != null) {
+            listOfStreams = bundle.getParcelableArrayList("listOfStreams");
+            System.out.println(listOfStreams);
+        }
+
+        streamerName = view.findViewById(R.id.textView_StreamerName);
+        streamName = view.findViewById(R.id.textView_StreamName);
+        description = view.findViewById(R.id.textView_StreamDesc);
         streamView = view.findViewById(R.id.stream_view);
 
+
         // BM - Code for getting stream
-        String url = "https://iblake.netlify.app/streamerdex/codemiko";
+        String url = "https://iblake.netlify.app/streamerdex/dasmehdi";
 
         streamView.setInitialScale(1);
         WebSettings webSettings = streamView.getSettings();
