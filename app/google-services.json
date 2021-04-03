@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "606527627416",
+    "firebase_url": "https://androidproject-584ee-default-rtdb.firebaseio.com",
+    "project_id": "androidproject-584ee",
+    "storage_bucket": "androidproject-584ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606527627416:android:19ee5a6942e0077d58f0ed",
+        "android_client_info": {
+          "package_name": "com.bcit.blake_lab8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606527627416-h4g5qdpt8tqk62kvvlihitek0d443sje.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgdGFrTRBgD6spxlUd5uD4v5SR2UKMyEo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606527627416-h4g5qdpt8tqk62kvvlihitek0d443sje.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606527627416:android:2774df6a3e9ce68858f0ed",
+        "android_client_info": {
+          "package_name": "com.bcit.firebasebcit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606527627416-h4g5qdpt8tqk62kvvlihitek0d443sje.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgdGFrTRBgD6spxlUd5uD4v5SR2UKMyEo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606527627416-h4g5qdpt8tqk62kvvlihitek0d443sje.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606527627416:android:6c93b24b19cdd76a58f0ed",
+        "android_client_info": {
+          "package_name": "com.bcit.streamerdex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606527627416-h4g5qdpt8tqk62kvvlihitek0d443sje.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgdGFrTRBgD6spxlUd5uD4v5SR2UKMyEo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606527627416-h4g5qdpt8tqk62kvvlihitek0d443sje.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
