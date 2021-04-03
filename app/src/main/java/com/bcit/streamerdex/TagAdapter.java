@@ -3,6 +3,7 @@ package com.bcit.streamerdex;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
@@ -24,11 +25,11 @@ public class TagAdapter extends RecyclerView.Adapter<TagAdapter.TagViewHolder> i
     }
 
     class TagViewHolder extends RecyclerView.ViewHolder {
-        private TextView tagNameTextView;
+        private CheckBox tagNameCheckBox;
 
         public TagViewHolder(@NonNull View itemView) {
             super(itemView);
-            tagNameTextView = itemView.findViewById(R.id.textView_tagName);
+            tagNameCheckBox = itemView.findViewById(R.id.checkBox_tagName);
         }
     }
 
@@ -43,7 +44,7 @@ public class TagAdapter extends RecyclerView.Adapter<TagAdapter.TagViewHolder> i
     @Override
     public void onBindViewHolder(@NonNull TagViewHolder holder, int position) {
         TagItem currItem = tagItemList.get(position);
-        holder.tagNameTextView.setText(currItem.getName());
+        holder.tagNameCheckBox.setText(currItem.getName());
     }
 
     @Override
