@@ -1,4 +1,4 @@
-package com.bcit.streamerdex.tags;
+package com.bcit.streamerdex;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.bcit.streamerdex.R;
 
 import java.util.ArrayList;
 import java.util.List;

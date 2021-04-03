@@ -1,4 +1,4 @@
-package com.bcit.streamerdex.stream_cards;
+package com.bcit.streamerdex;
 
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;

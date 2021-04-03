@@ -1,4 +1,4 @@
-package com.bcit.streamerdex.tags;
+package com.bcit.streamerdex;
 
 public class TagItem {
 

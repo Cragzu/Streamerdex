@@ -1,4 +1,4 @@
-package com.bcit.streamerdex.stream_cards;
+package com.bcit.streamerdex;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,8 +9,6 @@ import android.webkit.WebView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import com.bcit.streamerdex.R;
 
 public class StreamCardFragment extends Fragment {
 

@@ -13,8 +13,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
 
-import com.bcit.streamerdex.tags.TagAdapter;
-import com.bcit.streamerdex.tags.TagItem;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
