@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 public class StreamCardFragment extends Fragment {
 
+    private Stream stream;
     private WebView streamView;
 
     public StreamCardFragment()
@@ -40,6 +42,8 @@ public class StreamCardFragment extends Fragment {
         webSettings.setUseWideViewPort(true);
         webSettings.setLoadWithOverviewMode(true);
         streamView.loadUrl(url);
+
+        // JK - Code for filling out the fragment with Firebase Info
 
     }
 
