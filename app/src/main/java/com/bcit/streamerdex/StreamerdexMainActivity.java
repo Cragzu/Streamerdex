@@ -43,7 +43,7 @@ public class StreamerdexMainActivity extends AppCompatActivity {
                     listOfStreams.add(postSnapshot.getValue(Stream.class));
                 }
                 // so listOfStreams now has a list of Stream objects
-                // it seems redundent to get this snapshot then iterate through it and then
+                // it seems redundant to get this snapshot then iterate through it and then
                 // add to the stream, but from how the snapshot works, it won't bulk parse
                 // .getValue(Stream.class)
 
