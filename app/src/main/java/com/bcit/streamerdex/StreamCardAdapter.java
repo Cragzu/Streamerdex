@@ -24,10 +24,9 @@ public class StreamCardAdapter extends RecyclerView.Adapter<StreamCardAdapter.St
     @Override
     public StreamCardHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View streamCardView = inflater.inflate(R.layout.fragment_stream_card, parent, false);
 
-
-        //StreamCardHolder viewHolder = new StreamCardHolder();
-        return null;
+        return new StreamCardHolder(streamCardView);
     }
 
     @Override

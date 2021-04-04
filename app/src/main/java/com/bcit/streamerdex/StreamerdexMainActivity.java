@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,14 +29,18 @@ public class StreamerdexMainActivity extends AppCompatActivity {
 
     DatabaseReference databaseStreams;
     ArrayList<Stream> listOfStreams;
+    RecyclerView recyclerView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_streamerdex_main);
 
         databaseStreams = FirebaseDatabase.getInstance().getReference("streamerdex/streamers");
         listOfStreams = new ArrayList<>();
+
+        recyclerView = findViewById(R.id.streamerRecyclerView);
 
         databaseStreams.addValueEventListener(new ValueEventListener() {
             @Override
@@ -50,13 +56,9 @@ public class StreamerdexMainActivity extends AppCompatActivity {
                 Log.d("BLAKE_DEBUG", listOfStreams.toString());
 
 
-                setContentView(R.layout.activity_streamerdex_main);
-
-                Bundle bundle = new Bundle();
-                bundle.putParcelableArrayList("listOfStreams", listOfStreams);
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                Fragment fragment = fragmentManager.findFragmentById(R.id.fragment);
-                fragment.setArguments(bundle);
+                StreamCardAdapter streamCardAdapter = new StreamCardAdapter(listOfStreams);
+                recyclerView.setAdapter(streamCardAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(StreamerdexMainActivity.this));
             }
 
             @Override

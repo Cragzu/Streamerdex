@@ -6,13 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".StreamerdexMainActivity">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment"
-        android:name="com.bcit.streamerdex.StreamCardFragment"
+    <LinearLayout
+        android:id="@+id/linearLayout_streamer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="225dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/streamerRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragment"
+                    android:name="com.bcit.streamerdex.StreamCardFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
