@@ -45,9 +45,15 @@ public class PreferencesActivity extends AppCompatActivity implements SearchView
     }
 
     @Override
+    protected void onPostResume() {
+        tagPreferences.clear();
+        super.onPostResume();
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
-        tagList  = new ArrayList<>();
+        tagList = new ArrayList<>();
 
         // get data
         dbStreamerdex.addValueEventListener(new ValueEventListener() {
