@@ -26,6 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamerdexMainActivity extends AppCompatActivity {
 
@@ -65,7 +66,7 @@ public class StreamerdexMainActivity extends AppCompatActivity {
                 // where filterByPreferences returns an ArrayList<Stream> that only have tags
                 // matching in our tagPreferences
 
-                StreamCardAdapter adapter = new StreamCardAdapter(listOfStreams); // preferenceStreams go in here instead
+                StreamCardAdapter adapter = new StreamCardAdapter(filterPreferences()); // preferenceStreams go in here instead
                 rvStreams.setAdapter(adapter);
                 rvStreams.setLayoutManager(new LinearLayoutManager(StreamerdexMainActivity.this));
             }
@@ -78,4 +79,11 @@ public class StreamerdexMainActivity extends AppCompatActivity {
         super.onStart();
     }
 
+    // filters listOfStreams based on selected tags from Preferences Activity
+    private ArrayList<Stream> filterPreferences() {
+        return listOfStreams
+                .stream()
+                .filter(stream -> stream.getTags().stream().anyMatch(tagPreferences::contains))
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
 }
