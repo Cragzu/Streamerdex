@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="streamerdex_logo_purple">#FF4312AC</color>
+    <color name="streamerdex_purple_dark_accent">#FF260A62</color>
+
+    <color name="streamerdex_green">#FF98D416</color>
+    <color name="streamerdex_green_dark_accent">#FF60860E</color>
+
+
+    <color name="streamerdex_background_purple">#FFF0EAFD</color>
+
+
 </resources>

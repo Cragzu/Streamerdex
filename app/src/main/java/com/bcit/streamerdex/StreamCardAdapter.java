@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StreamCardAdapter extends RecyclerView.Adapter<StreamCardAdapter.StreamCardHolder> {
-    private List<Stream> streamList;
 
+    private List<Stream> streamList;
     public StreamCardAdapter(List<Stream> streamList) {
         this.streamList = streamList;
     }
@@ -24,19 +24,19 @@ public class StreamCardAdapter extends RecyclerView.Adapter<StreamCardAdapter.St
     @Override
     public StreamCardHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View streamCardView = inflater.inflate(R.layout.fragment_stream_card, parent, false);
+        View streamView = inflater.inflate(R.layout.stream_card_item, parent, false);
 
-        return new StreamCardHolder(streamCardView);
+        return new StreamCardHolder(streamView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull StreamCardHolder holder, int position) {
         TextView streamerName = holder.streamerName;
         TextView streamTitle = holder.streamTitle;
-        TextView streamLink;
+        TextView streamLink = holder.streamLink;
         TextView description = holder.description;
         WebView streamView = holder.streamView;
-        ArrayList<String> tags;
+        ArrayList<String> tags = holder.tags;
 
         Stream stream = streamList.get(position);
         streamerName.setText(stream.getStreamerName());
