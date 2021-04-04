@@ -36,6 +36,7 @@ public class PreferencesActivity extends AppCompatActivity implements SearchView
 
         loadTagList();
         setUpRecycler();
+        //addStreamer();
 
         button_LaunchMain.setOnClickListener(new View.OnClickListener() {
             @Override

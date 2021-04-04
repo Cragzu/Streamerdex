@@ -30,8 +30,6 @@ public class StreamCardFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("Lifecycle fragment", "onCreate");
-
-
     }
 
     @Override
