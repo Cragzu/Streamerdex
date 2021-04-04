@@ -42,13 +42,13 @@
                 android:id="@+id/textView_StreamerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Streamer name [PH]" />
+                android:text="Streamer name" />
 
             <TextView
                 android:id="@+id/textView_StreamName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Stream name [PH]" />
+                android:text="Stream name" />
         </LinearLayout>
 
     </LinearLayout>
