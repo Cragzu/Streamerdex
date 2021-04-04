@@ -34,13 +34,12 @@ public class StreamerdexMainActivity extends AppCompatActivity {
     ArrayList<Stream> listOfStreams;
     RecyclerView rvStreams;
     ArrayList<String> tagPreferences;
+    StreamCardAdapter streamAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_streamerdex_main);
-        Intent intent = getIntent();
-        tagPreferences = intent.getStringArrayListExtra("tagPreferences");
 
         databaseStreams = FirebaseDatabase.getInstance().getReference("streamerdex/streamers");
         listOfStreams = new ArrayList<>();
@@ -49,25 +48,18 @@ public class StreamerdexMainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
+        Intent intent = getIntent();
+        tagPreferences = intent.getStringArrayListExtra("tagPreferences");
+
         databaseStreams.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
                     listOfStreams.add(postSnapshot.getValue(Stream.class));
                 }
-                // BM -
-                // so listOfStreams now has a list of Stream objects
-                // it seems redundant to get this snapshot then iterate through it and then
-                // add to the stream, but from how the snapshot works, it won't bulk parse
-                // .getValue(Stream.class)
 
-                // BM -
-                // preferenceStreams = filterByPreferences(listOfStreams);
-                // where filterByPreferences returns an ArrayList<Stream> that only have tags
-                // matching in our tagPreferences
-
-                StreamCardAdapter adapter = new StreamCardAdapter(filterPreferences()); // preferenceStreams go in here instead
-                rvStreams.setAdapter(adapter);
+                streamAdapter = new StreamCardAdapter(filterPreferences());
+                rvStreams.setAdapter(streamAdapter);
                 rvStreams.setLayoutManager(new LinearLayoutManager(StreamerdexMainActivity.this));
             }
 
