@@ -16,10 +16,7 @@
         relate to your chosen topics. Check out a preview of their content through our app,
         and if you like them, head on over to their channel on Twitch.
     </string>
-    <string name="help_popup_body_2">
 
-    </string>
-    <string name="help_popup_body_3">
+    <string name="tags">Tags:</string>
 
-    </string>
 </resources>
