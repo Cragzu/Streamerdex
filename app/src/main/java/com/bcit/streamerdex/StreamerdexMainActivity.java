@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -38,18 +39,16 @@ public class StreamerdexMainActivity extends AppCompatActivity {
         databaseStreams.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (int index = 0; index < snapshot.getChildrenCount(); index++) {
-                    Stream stream = new Stream(
-                            ((String)((HashMap)((ArrayList) snapshot.getValue()).get(index)).get("streamerName")),
-                            ((String)((HashMap)((ArrayList) snapshot.getValue()).get(index)).get("streamTitle")),
-                            ((String)((HashMap)((ArrayList) snapshot.getValue()).get(index)).get("streamLink")),
-                            ((String)((HashMap)((ArrayList) snapshot.getValue()).get(index)).get("streamDescription")),
-                            ((String)((HashMap)((ArrayList) snapshot.getValue()).get(index)).get("videoLink")),
-                            ((ArrayList)((HashMap)((ArrayList) snapshot.getValue()).get(index)).get("tags"))
-                    );
-                    listOfStreams.add(stream);
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                    listOfStreams.add(postSnapshot.getValue(Stream.class));
                 }
-                //System.out.println(listOfStreams);
+                // so listOfStreams now has a list of Stream objects
+                // it seems redundent to get this snapshot then iterate through it and then
+                // add to the stream, but from how the snapshot works, it won't bulk parse
+                // .getValue(Stream.class)
+
+                Log.d("BLAKE_DEBUG", listOfStreams.toString());
+
 
                 setContentView(R.layout.activity_streamerdex_main);
 
@@ -58,7 +57,6 @@ public class StreamerdexMainActivity extends AppCompatActivity {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 Fragment fragment = fragmentManager.findFragmentById(R.id.fragment);
                 fragment.setArguments(bundle);
-
             }
 
             @Override
