@@ -1,136 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/LinearLayout_StreamCard"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout_StreamCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="15dp"
+    android:background="@drawable/card_border"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.482"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.006">
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_AvatarTitleBar"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="15dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.006">
+        android:layout_height="92dp"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/LinearLayout_AvatarTitleBar"
-            android:layout_width="match_parent"
-            android:layout_height="92dp"
-            android:orientation="horizontal">
+            android:id="@+id/LinearLayout_TitleBar"
+            android:layout_width="272dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView_Avatar"
-                android:layout_width="96dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="10dp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <LinearLayout
-                android:id="@+id/LinearLayout_TitleBar"
-                android:layout_width="272dp"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView_StreamerName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Streamer name [PH]" />
-
-                <TextView
-                    android:id="@+id/textView_StreamName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Stream name [PH]" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <WebView
-            android:id="@+id/stream_view"
-            android:layout_width="match_parent"
-            android:layout_height="225dp" />
-
-        <LinearLayout
-            android:id="@+id/LinearLayout_ButtonsBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button_Bar1"
+            <TextView
+                android:id="@+id/textView_StreamerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
+                android:text="Streamer name"
+                android:textSize="24sp" />
 
-            <Space
+            <TextView
+                android:id="@+id/textView_StreamName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/button_Bar2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/button_Bar3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-        </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <TextView
-            android:id="@+id/textView_StreamDesc"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:text="placeholder text for streamer description" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <LinearLayout
-            android:id="@+id/LinearLayout_MoreBar"
-            android:layout_width="253dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button_More1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/button_More2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
+                android:text="Stream name"
+                android:textSize="18sp" />
         </LinearLayout>
 
     </LinearLayout>
+
+    <WebView
+        android:id="@+id/stream_view"
+        android:layout_width="match_parent"
+        android:layout_height="225dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/textView_Tags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tags"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView_TagsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="gaming, rpg, fps" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/textView_StreamDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="placeholder text for streamer description" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <Button
+        android:id="@+id/button_GoToStreamOnTwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/view_on_twitch" />
+
+</LinearLayout>

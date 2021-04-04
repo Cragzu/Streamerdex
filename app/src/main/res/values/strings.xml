@@ -3,6 +3,7 @@
     <string name="login">Log in</string>
     <string name="help">Help</string>
     <string name="launch_main">Get Started!</string>
+    <string name="view_on_twitch">View Stream on Twitch!</string>
     <string name="hang_on">Hang on!</string>
     <string name="loading_preferences">We’re finding streamers who fall under your preferences</string>
 
@@ -16,10 +17,7 @@
         relate to your chosen topics. Check out a preview of their content through our app,
         and if you like them, head on over to their channel on Twitch.
     </string>
-    <string name="help_popup_body_2">
 
-    </string>
-    <string name="help_popup_body_3">
+    <string name="tags">Tags:</string>
 
-    </string>
 </resources>
