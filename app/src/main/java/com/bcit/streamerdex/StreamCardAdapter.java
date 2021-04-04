@@ -1,11 +1,14 @@
 package com.bcit.streamerdex;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,10 +37,10 @@ public class StreamCardAdapter extends RecyclerView.Adapter<StreamCardAdapter.St
     public void onBindViewHolder(@NonNull StreamCardHolder holder, int position) {
         TextView streamerName = holder.streamerName;
         TextView streamTitle = holder.streamTitle;
-        TextView streamLink = holder.streamLink;
         TextView description = holder.description;
         TextView streamTags = holder.streamTags;
         WebView streamView = holder.streamView;
+        Button viewStreamOnTwitch = holder.viewStreamOnTwitch;
 
         Stream stream = streamList.get(position);
         ArrayList<String> tags = stream.getTags();
@@ -47,6 +50,11 @@ public class StreamCardAdapter extends RecyclerView.Adapter<StreamCardAdapter.St
         streamTitle.setText(stream.getStreamTitle());
         description.setText(stream.getStreamDescription());
         streamTags.setText(tagsString);
+
+        viewStreamOnTwitch.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(stream.getStreamLink()));
+            v.getContext().startActivity(intent);
+        });
 
         streamView.setInitialScale(1);
         WebSettings webSettings = streamView.getSettings();
@@ -64,11 +72,10 @@ public class StreamCardAdapter extends RecyclerView.Adapter<StreamCardAdapter.St
     public class StreamCardHolder extends RecyclerView.ViewHolder {
         TextView streamerName;
         TextView streamTitle;
-        TextView streamLink;
         TextView description;
         WebView streamView;
         TextView streamTags;
-        ArrayList<String> tags;
+        Button viewStreamOnTwitch;
 
         public StreamCardHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,6 +85,7 @@ public class StreamCardAdapter extends RecyclerView.Adapter<StreamCardAdapter.St
             description = itemView.findViewById(R.id.textView_StreamDesc);
             streamView = itemView.findViewById(R.id.stream_view);
             streamTags = itemView.findViewById(R.id.textView_TagsList);
+            viewStreamOnTwitch = itemView.findViewById(R.id.button_GoToStreamOnTwitch);
 
         }
     }

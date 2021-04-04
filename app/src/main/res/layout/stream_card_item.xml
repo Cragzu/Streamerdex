@@ -23,14 +23,6 @@
         android:layout_height="92dp"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageView_Avatar"
-            android:layout_width="96dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="10dp"
-            tools:srcCompat="@tools:sample/avatars" />
-
         <LinearLayout
             android:id="@+id/LinearLayout_TitleBar"
             android:layout_width="272dp"
@@ -42,13 +34,15 @@
                 android:id="@+id/textView_StreamerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Streamer name" />
+                android:text="Streamer name"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_StreamName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Stream name" />
+                android:text="Stream name"
+                android:textSize="18sp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -82,37 +76,18 @@
     <TextView
         android:id="@+id/textView_StreamDesc"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
+        android:layout_height="wrap_content"
         android:text="placeholder text for streamer description" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="10dp" />
 
-    <LinearLayout
-        android:id="@+id/LinearLayout_MoreBar"
-        android:layout_width="253dp"
+    <Button
+        android:id="@+id/button_GoToStreamOnTwitch"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button_More1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/button_More2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
-    </LinearLayout>
+        android:layout_weight="1"
+        android:text="@string/view_on_twitch" />
 
 </LinearLayout>
