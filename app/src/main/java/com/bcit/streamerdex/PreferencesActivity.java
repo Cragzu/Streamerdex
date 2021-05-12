@@ -10,9 +10,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,9 +32,8 @@ public class PreferencesActivity extends AppCompatActivity implements SearchView
     private SearchView searchView;
     private TagAdapter tagAdapter;
     private ArrayList<TagItem> tagList;
-    private ArrayList<TagItem> selectedTagsList;
-
     private Button button_LaunchMain;
+    private ArrayList<String> tagPreferences = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +41,19 @@ public class PreferencesActivity extends AppCompatActivity implements SearchView
         setContentView(R.layout.activity_preferences);
 
         button_LaunchMain = findViewById(R.id.button_LaunchMain);
-
         button_LaunchMain.setOnClickListener(v -> goToMain());
+    }
+
+    @Override
+    protected void onPostResume() {
+        tagPreferences.clear();
+        super.onPostResume();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        tagList  = new ArrayList<>();
+        tagList = new ArrayList<>();
 
         // get data
         dbStreamerdex.addValueEventListener(new ValueEventListener() {
@@ -65,6 +71,16 @@ public class PreferencesActivity extends AppCompatActivity implements SearchView
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {}
         });
+    }
+
+    public void tagCheckBoxToggle(View v) {
+        CheckBox checkBox = (CheckBox) v;
+        String checkBoxText = checkBox.getText().toString();
+        if (checkBox.isChecked()) {
+            tagPreferences.add(checkBoxText);
+        } else {
+            tagPreferences.remove(checkBoxText);
+        }
     }
 
     private void setUpRecycler() {
@@ -98,8 +114,14 @@ public class PreferencesActivity extends AppCompatActivity implements SearchView
         return false;
     }
 
-    private void goToMain() { // todo: should pass data from selected tags to get cards
-        Intent i = new Intent(this, StreamerdexMainActivity.class);
-        startActivity(i);
+    private void goToMain() {
+        if (tagPreferences.size() > 0) {
+            Intent intent = new Intent(this, StreamerdexMainActivity.class);
+            intent.putStringArrayListExtra("tagPreferences", tagPreferences);
+            startActivity(intent);
+        } else {
+            Toast.makeText(getApplicationContext(),  "Make sure to select at least 1 tag.", Toast.LENGTH_SHORT).show();
+        }
     }
+
 }
